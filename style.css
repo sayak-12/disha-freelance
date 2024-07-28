@@ -3,7 +3,8 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
+    /* border: 1px solid green; */
+} 
 .nvb{
     width: 100%;
     height: 12vh;
@@ -30,6 +31,11 @@
     text-transform: uppercase;
     font-size: 1.6em;
     color: white;
+}
+.nvb i{
+    position: absolute;
+    right: 5%;
+    display: none;
 }
 .rightside .navitem a{
     text-decoration: none;
@@ -262,6 +268,29 @@
     background-color: rgb(0, 77, 230);
     color: white;
 }
+.ham{
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    right: 5%;
+    top: 12vh;
+    padding: 25px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.357);
+    transition: 0.3s;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 100;
+}
+.ham.active{
+    opacity: 1;
+    pointer-events: all;
+}
+.ham a{
+    text-decoration: none;
+    color: black;
+}
 .more{
     border: none;
     padding: 10px 30px;
@@ -318,6 +347,9 @@ footer .socials div{
     height: 40px;
     background-color: white;
     border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .part2{
     display: flex;
@@ -341,4 +373,122 @@ footer iframe{
     width: 100%;
     margin-top: 25px;
     border-radius: 10px;
+}
+
+@media screen and (max-width: 992px){
+        .right svg{
+            scale: 1;
+            width: 100%;
+        }
+}
+@media screen and (max-width: 800px){
+        .interview{
+            flex-direction: column;
+            align-items: center;
+            height: max-content;
+        }
+        .interview .left{
+            width: 100%;
+            max-width: 600px;
+            justify-content: center;
+            align-items: center;
+        }
+        .interview .right{
+            width: 100%;
+
+        }
+        .right svg{
+            max-width: 450px;
+        }
+        .companies{
+            display: flex;
+            flex-wrap: wrap;
+            height: max-content;
+        }
+        .companies .text-section{
+            width: 100%;
+            margin-bottom: 3em;
+        }
+        .companies .image-section{
+            width: 100%;
+            height: 450px;
+            margin-bottom: 3em;
+        }
+        footer .content{
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+        }
+        .part1, .part2, .part2 ul li{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .text-section{
+            text-align: center;
+        }
+        .sts{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            flex-direction: column;
+        }
+        .stats-grid{
+            width: 100%;
+        }
+        .nums{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            flex-direction: column;
+        }
+}
+@media screen and (max-width: 600px){
+    .book{
+        overflow: hidden;
+        flex-direction: column;
+        position: relative;
+    }
+    .book .right{
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        position: absolute;
+    }
+    .book .left{
+        z-index: 5;
+        width: 100%;
+        background-color: #ffffff76;
+        backdrop-filter: blur(3px);
+    }
+    .nvb i{
+        display: flex;
+        color: white;
+    }
+    .rightside{
+        display: none;
+    }
+    .right svg{
+        width: 100%;
+    }
+    .right video{
+        width: 85%;
+    }
+    .sts{
+        font-size: 80%;
+    }
+    .swiper-slide img{
+        width: 100%;
+    }
+}
+@media screen and (max-width: 320px){
+    body{
+        overflow-x: hidden;
+    }
+    .socials{
+        scale: 0.8;
+    }
 }
